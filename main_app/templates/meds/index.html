@@ -4,17 +4,17 @@
 <h1>Medication List</h1>
 
 {% for med in meds %}
-  <div class="card">
-    <div class="card-content">
-      <span class="card-title">{{ med.name }}</span>
-      <p>Quantity: {{ med.quantity }}</p>
-      <p>Perscribed: {{ med.perscribed }}</p>
-      <p>expiration: {{ med.expiration }}</p>
-      <p>instructions: {{ med.instructions }}</p>
-
-
+<a href="{% url 'detail' med.id %}">
+    <div class="card">
+        <div class="card-content">
+            <span class="card-title">{{ med.name }}</span>
+            <p>Quantity: {{ med.quantity }}</p>
+            <p>Perscribed: {{ med.perscribed }}</p>
+            <p>expiration: {{ med.expiration }}</p>
+            <p>instructions: {{ med.instructions }}</p>
+        </div>
     </div>
-  </div>
+</a>
 {% endfor %}
 
 {% endblock %}
