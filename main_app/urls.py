@@ -2,7 +2,7 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    # home page
+    # home page 
     path('', views.home, name='home'),
     # index page that shows all medications within database
     path('meds/', views.meds_index, name='index'),
