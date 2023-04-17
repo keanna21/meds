@@ -12,7 +12,7 @@
             <p>Perscribed: {{ med.perscribed }}</p>
             <p>Expiration: {{ med.expiration }}</p>
             <p>Instructions: {{ med.instructions }}</p>
-            <p>Last Taken: {{ med.whentaken_set.last }}</p>
+            <p>Last Taken: {{ med.whentaken_set.first }}</p>
         </div>
         {% comment %} <tbody>
             {% for taken in med.whentaken_set.all.last %}

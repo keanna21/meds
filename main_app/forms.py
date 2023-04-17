@@ -4,4 +4,4 @@ from .models import WhenTaken
 class WhenTakenForm(ModelForm):
   class Meta:
     model = WhenTaken
-    fields = ['date', 'quantity']
+    fields = ['date', 'time', 'quantity']
