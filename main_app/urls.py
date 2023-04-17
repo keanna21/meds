@@ -11,4 +11,5 @@ urlpatterns = [
     path('meds/create/', views.MedCreate.as_view(), name='meds_create'),
     path('meds/<int:pk>/update/', views.MedUpdate.as_view(), name='meds_update'),
     path('meds/<int:pk>/delete/', views.MedDelete.as_view(), name='meds_delete'),
+    path('meds/<int:med_id>/add_whentaken/', views.add_whentaken, name='add_whentaken'),
 ]

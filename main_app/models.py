@@ -14,3 +14,13 @@ class Med(models.Model):
   
   def get_absolute_url(self):
     return reverse('detail', kwargs={'med_id': self.id})
+  
+class WhenTaken(models.Model):
+  date = models.DateTimeField()
+  quantity = models.IntegerField()
+  
+  # Foreign Key
+  med = models.ForeignKey(Med, on_delete=models.CASCADE)
+  
+  def __str__(self):
+    return f"{self.date} {self.quantity}"
