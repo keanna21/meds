@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Med
+from .forms import WhenTakenForm
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 
@@ -29,4 +30,17 @@ def meds_index(request):
 
 def meds_detail(request, med_id):
   med = Med.objects.get(id=med_id)
-  return render(request, 'meds/detail.html', { 'med': med })
+  whentaken_form = WhenTakenForm()
+  return render(request, 'meds/detail.html', { 'med': med, 'whentaken_form': whentaken_form})
+
+def add_whentaken(request, med_id):
+  # create a ModelForm instance using the data in request.POST
+  form = WhenTakenForm(request.POST)
+  # validate the form
+  if form.is_valid():
+    # don't save the form to the db until it
+    # has the cat_id assigned
+    new_whentaken = form.save(commit=False)
+    new_whentaken.med_id = med_id
+    new_whentaken.save()
+  return redirect('detail', med_id=med_id)

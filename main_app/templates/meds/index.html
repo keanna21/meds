@@ -10,9 +10,18 @@
             <span class="card-title">{{ med.name }}</span>
             <p>Quantity: {{ med.quantity }}</p>
             <p>Perscribed: {{ med.perscribed }}</p>
-            <p>expiration: {{ med.expiration }}</p>
-            <p>instructions: {{ med.instructions }}</p>
+            <p>Expiration: {{ med.expiration }}</p>
+            <p>Instructions: {{ med.instructions }}</p>
+            <p>Last Taken: {{ med.whentaken_set.last }}</p>
         </div>
+        {% comment %} <tbody>
+            {% for taken in med.whentaken_set.all.last %}
+                <tr>
+                    <td>{{taken.date}}</td>
+                    <td>{{taken.quantity}}</td>
+                </tr>
+            {% endfor %}
+        </tbody> {% endcomment %}
     </div>
 </a>
 {% endfor %}
