@@ -1,10 +1,24 @@
 from django.shortcuts import render
 from .models import Med
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+
 
 # Add the following import
 from django.http import HttpResponse
 
+class MedCreate(CreateView):
+  model = Med
+  fields = '__all__'
+
+class MedUpdate(UpdateView):
+  model = Med
+  fields = '__all__'
+
+class MedDelete(DeleteView):
+  model = Med
+  success_url = '/meds/'
 # Define the home view
+
 def home(request):
   return render(request, 'home.html')
 

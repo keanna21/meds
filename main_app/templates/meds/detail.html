@@ -11,6 +11,10 @@
         <p>expiration: {{ med.expiration }}</p>
         <p>instructions: {{ med.instructions }}</p>
     </div>
+    <div class="card-action">
+        <a href="{% url 'meds_update' med.id %}">Edit</a>
+        <a href="{% url 'meds_delete' med.id %}">Delete</a>
+      </div>
 </div>
 
 {% endblock %}
