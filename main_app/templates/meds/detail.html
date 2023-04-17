@@ -27,12 +27,13 @@
         </form>
         <table class="striped">
             <thead>
-                <tr><th>Date</th><th>Quantity</th></tr>
+                <tr><th>Date</th><th>Time</th><th>Quantity</th></tr>
             </thead>
             <tbody>
                 {% for taken in med.whentaken_set.all %}
                     <tr>
                         <td>{{taken.date}}</td>
+                        <td>{{taken.time}}</td>
                         <td>{{taken.quantity}}</td>
                     </tr>
                 {% endfor %}
@@ -46,6 +47,11 @@
       format: 'yyyy-mm-dd',
       defaultDate: new Date(),
       setDefaultDate: true,
+      autoClose: true
+    });
+
+    const timeEl = document.getElementById('id_time');
+    M.Timepicker.init(timeEl, {
       autoClose: true
     });
 </script>
