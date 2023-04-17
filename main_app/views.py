@@ -36,6 +36,8 @@ def meds_detail(request, med_id):
 def add_whentaken(request, med_id):
   # create a ModelForm instance using the data in request.POST
   form = WhenTakenForm(request.POST)
+  # check what request.POST is giving us
+  # print(request.POST, '<<<request.POST')
   # validate the form
   if form.is_valid():
     # don't save the form to the db until it
