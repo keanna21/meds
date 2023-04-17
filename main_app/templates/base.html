@@ -23,8 +23,14 @@
 					<li><a href="/" class="left brand-logo">&nbsp;&nbsp;Med Tracker</a></li>
                     </ul>
 				<ul class="right">
+                    {% if user.is_authenticated %}
                     <li><a href="/meds">View All My Medications</a></li>
 					<li><a href="{% url 'meds_create' %}">Add a Medication</a></li>
+                    <li><a href="{% url 'logout' %}">Log Out</a></li>
+                    {% else %}
+                    <li><a href="{% url 'signup' %}">Sign Up</a></li>
+                    <li><a href="{% url 'login' %}">Log In</a></li>
+                  {% endif %}
 				</ul>
 			</div>
 		</nav>
