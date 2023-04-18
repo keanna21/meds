@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+import requests
 from .models import Med
 from .forms import WhenTakenForm
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
