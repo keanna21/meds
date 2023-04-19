@@ -10,8 +10,8 @@
                 <span class="card-title">{{ med.name }}</span>
                 <p>Quantity: {{ med.quantity }}</p>
                 <p>Perscribed: {{ med.perscribed }}</p>
-                <p>expiration: {{ med.expiration }}</p>
-                <p>instructions: {{ med.instructions }}</p>
+                <p>Expiration: {{ med.expiration }}</p>
+                <p>Instructions: {{ med.instructions }}</p>
             </div>
             <div class="card-action">
                 <a href="{% url 'meds_update' med.id %}">Edit</a>
@@ -27,7 +27,7 @@
         </form>
         <table class="striped">
             <thead>
-                <tr><th>Date</th><th>Time</th><th>Quantity</th></tr>
+                <tr class="dtq"><th>Date</th><th>Time</th><th>Quantity</th></tr>
             </thead>
             <tbody>
                 {% for taken in med.whentaken_set.all %}

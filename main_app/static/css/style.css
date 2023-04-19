@@ -1,63 +1,121 @@
 body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-    background-color: white;
-   
-  }
-  
-  main {
-    flex: 1 0 auto;
-  }
-  nav {
-    background-color: lightgray;
-    
-    
-  }
-  footer.page-footer {
-    padding-top: 0;
-    text-align: right;
-    background-color: lightgray
-  }
-  
-  .timepicker-digital-display {
-    background-color: orangered;
-  }
-
-  .right {
-    color: white;
-  }
-
-  .navbar-fixed {
-    color: blue;
-  }
-
-  /* .titles{
-    font-family: 'Signika', sans-serif;
-  }
-  
-  p{
-    font-family: 'Signika', sans-serif;
-  } */
-
-  .card-title, p, .titles{
-    font-family: 'Signika', sans-serif;
-    color: #0277BD;
-  }
-  label{
-    color: #01579B;
-  }
-  input:not([type]):focus:not([readonly]), input[type="text"]:not(.browser-default):focus:not([readonly]), input[type="password"]:not(.browser-default):focus:not([readonly]), input[type="email"]:not(.browser-default):focus:not([readonly]), input[type="url"]:not(.browser-default):focus:not([readonly]), input[type="time"]:not(.browser-default):focus:not([readonly]), input[type="date"]:not(.browser-default):focus:not([readonly]), input[type="datetime"]:not(.browser-default):focus:not([readonly]), input[type="datetime-local"]:not(.browser-default):focus:not([readonly]), input[type="tel"]:not(.browser-default):focus:not([readonly]), input[type="number"]:not(.browser-default):focus:not([readonly]), input[type="search"]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
-    border-bottom: 1px solid black;
-    -webkit-box-shadow: 0 1px 0 0 black;
-    box-shadow: 0 1px 0 0 black;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background-color: white;
 }
-.btn{
-  background-color: #01579B;
+
+main {
+  flex: 1 0 auto;
 }
-.btn:hover{
+nav {
+  background-color: lightgray;
+}
+footer.page-footer {
+  padding-top: 0;
+  text-align: right;
+  background-color: lightgray;
+}
+
+.timepicker-digital-display {
+  background-color: #0277bd;
+}
+
+.right {
+  color: white;
+}
+
+.navbar-fixed {
+  color: blue;
+}
+
+p,
+.titles {
+  font-family: "Signika", sans-serif;
+  color: #0277bd;
+}
+label {
+  color: #01579b;
+}
+input:not([type]):focus:not([readonly]),
+input[type="text"]:not(.browser-default):focus:not([readonly]),
+input[type="password"]:not(.browser-default):focus:not([readonly]),
+input[type="email"]:not(.browser-default):focus:not([readonly]),
+input[type="url"]:not(.browser-default):focus:not([readonly]),
+input[type="time"]:not(.browser-default):focus:not([readonly]),
+input[type="date"]:not(.browser-default):focus:not([readonly]),
+input[type="datetime"]:not(.browser-default):focus:not([readonly]),
+input[type="datetime-local"]:not(.browser-default):focus:not([readonly]),
+input[type="tel"]:not(.browser-default):focus:not([readonly]),
+input[type="number"]:not(.browser-default):focus:not([readonly]),
+input[type="search"]:not(.browser-default):focus:not([readonly]),
+textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid black;
+  -webkit-box-shadow: 0 1px 0 0 black;
+  box-shadow: 0 1px 0 0 black;
+}
+.btn {
+  background-color: #01579b;
+}
+.btn:hover {
+  background-color: #0277bd;
+}
+#add {
+  margin-top: 20px;
+}
+.test:hover {
+  background-color: rgb(211, 211, 211, 0.4);
+  transition: transform 125ms;
+  transform: translateY(-15px);
+}
+.card-title,
+.dtq {
+  color: #424242;
+  font-family: "Signika", sans-serif;
+}
+.timepicker-tick:hover {
+  background-color: #039BE5;
+  color: white;
+}
+.timepicker-canvas-bearing {
+  fill: #056ea3;
+}
+.timepicker-canvas line {
+  stroke: #056ea3;
+}
+.timepicker-canvas-bg {
+  fill: #0277bd;
+}
+.timepicker-close { 
+  color: #0277BD
+}
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
+  color: black;
+  margin-right: 24px;
+  -webkit-transition: color .3s ease;
+  transition: color .3s ease;
+  text-transform: uppercase;
+}
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating):hover {
+  color: #039BE5;
+  margin-right: 24px;
+  -webkit-transition: color .3s ease;
+  transition: color .3s ease;
+  text-transform: uppercase;
+}
+.datepicker-date-display{
   background-color: #0277BD;
 }
-#add{
-  margin-top: 20px;
+.datepicker-day-button{
+  color: black;
+}
+.datepicker-day-button:hover{
+  background-color: #0277BD;
+  color: white;
+}
+.datepicker-table td.is-selected {
+  background-color: #0277BD;
+}
+.datepicker-cancel, .datepicker-done{ 
+  color: #0277BD
 }
