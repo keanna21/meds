@@ -2,22 +2,62 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    background-color: lightgray;
+    background-color: white;
+   
   }
   
   main {
     flex: 1 0 auto;
   }
   nav {
-    background-color: darkgrey;
+    background-color: lightgray;
+    
     
   }
   footer.page-footer {
     padding-top: 0;
     text-align: right;
-    background-color: darkgray;
+    background-color: lightgray
   }
   
   .timepicker-digital-display {
     background-color: orangered;
   }
+
+  .right {
+    color: white;
+  }
+
+  .navbar-fixed {
+    color: blue;
+  }
+
+  /* .titles{
+    font-family: 'Signika', sans-serif;
+  }
+  
+  p{
+    font-family: 'Signika', sans-serif;
+  } */
+
+  .card-title, p, .titles{
+    font-family: 'Signika', sans-serif;
+    color: #0277BD;
+  }
+  label{
+    color: #01579B;
+  }
+  input:not([type]):focus:not([readonly]), input[type="text"]:not(.browser-default):focus:not([readonly]), input[type="password"]:not(.browser-default):focus:not([readonly]), input[type="email"]:not(.browser-default):focus:not([readonly]), input[type="url"]:not(.browser-default):focus:not([readonly]), input[type="time"]:not(.browser-default):focus:not([readonly]), input[type="date"]:not(.browser-default):focus:not([readonly]), input[type="datetime"]:not(.browser-default):focus:not([readonly]), input[type="datetime-local"]:not(.browser-default):focus:not([readonly]), input[type="tel"]:not(.browser-default):focus:not([readonly]), input[type="number"]:not(.browser-default):focus:not([readonly]), input[type="search"]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid black;
+    -webkit-box-shadow: 0 1px 0 0 black;
+    box-shadow: 0 1px 0 0 black;
+}
+.btn{
+  background-color: #01579B;
+}
+.btn:hover{
+  background-color: #0277BD;
+}
+#add{
+  margin-top: 20px;
+}
