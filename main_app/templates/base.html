@@ -2,49 +2,97 @@
 
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Med Tracker</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/style.css' %}"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/style.css' %}"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link
+      href="https://clinicaltables.nlm.nih.gov/autocomplete-lhc-versions/17.0.2/autocomplete-lhc.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://clinicaltables.nlm.nih.gov/autocomplete-lhc-versions/17.0.2/autocomplete-lhc.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Signika:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Signika:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Med Tracker</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <link href='https://clinicaltables.nlm.nih.gov/autocomplete-lhc-versions/17.0.2/autocomplete-lhc.min.css' rel="stylesheet">
-    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
-    <script src='https://clinicaltables.nlm.nih.gov/autocomplete-lhc-versions/17.0.2/autocomplete-lhc.min.js'></script> 
-</head>
-
-<body>
-	<header class="navbar-fixed">
-		<nav>
-			<div class="nav-wrapper">
-				<ul>
-					<li><a href="/" class="left brand-logo">&nbsp;&nbsp;Med Tracker</a></li>
-                    </ul>
-				<ul class="right">
-                    {% if user.is_authenticated %}
-                    <li><a href="/meds">View All My Medications</a></li>
-					<li><a href="{% url 'meds_create' %}">Add a Medication</a></li>
-                    <li><a href="{% url 'logout' %}">Log Out</a></li>
-                    {% else %}
-                    <li><a href="{% url 'signup' %}">Sign Up</a></li>
-                    <li><a href="{% url 'login' %}">Log In</a></li>
-                  {% endif %}
-				</ul>
-			</div>
-		</nav>
-	</header>
-	<main class="container">
-		{% block content %}
-		{% endblock %}
-	</main>
+  <body>
+    <header class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper">
+          <ul>
+            <li>
+              <a href="/" class="left brand-logo light-blue-text text-darken-3"
+                >&nbsp;&nbsp;Med Tracker</a
+              >
+            </li>
+          </ul>
+          <ul class="right">
+            {% if user.is_authenticated %}
+            <li>
+              <a class="light-blue-text text-darken-3" href="/meds"
+                >View All My Medications</a
+              >
+            </li>
+            <li>
+              <a
+                class="light-blue-text text-darken-3"
+                href="{% url 'meds_create' %}"
+                >Add a Medication</a
+              >
+            </li>
+            <li>
+              <a class="light-blue-text text-darken-3" href="{% url 'logout' %}"
+                >Log Out</a
+              >
+            </li>
+            {% else %}
+            <li>
+              <a class="light-blue-text text-darken-3" href="{% url 'signup' %}"
+                >Sign Up</a
+              >
+            </li>
+            <li>
+              <a class="light-blue-text text-darken-3" href="{% url 'login' %}"
+                >Log In</a
+              >
+            </li>
+            {% endif %}
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="container">{% block content %} {% endblock %}</main>
     <footer class="page-footer">
-		<div class="right">&copy; Created by Tristan Hartman, Keanna Thompson, And Maria Grassa &nbsp;</div>
-	</footer>
-</body>
-
+      <div class="right light-blue-text text-darken-3">
+        &copy; Created by Tristan Hartman, Keanna Thompson, And Maria Grassa
+        &nbsp;
+      </div>
+    </footer>
+  </body>
 </html>
