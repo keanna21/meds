@@ -21,7 +21,7 @@ class MedCreate(LoginRequiredMixin, CreateView):
 
 class MedUpdate(LoginRequiredMixin, UpdateView):
   model = Med
-  fields = '__all__'
+  fields = ['name', 'quantity', 'perscribed', 'expiration', 'instructions']
 
 class MedDelete(LoginRequiredMixin, DeleteView):
   model = Med
