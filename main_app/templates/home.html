@@ -5,33 +5,26 @@
 	<div class="slider fullscreen">
 		<ul class="slides">
 		  <li>
-			<img src="https://i.imgur.com/lMrZdwt.jpg"> <!-- random image -->
+			<img src="https://i.imgur.com/lMrZdwt.jpg">
 			<div class="caption left-align">
 			  <h3 class="light-blue-text text-darken-4">Welcome To The Med Tracker</h3>
 			  <h5 class="test light-blue-text text-darken-1">We provide a user friendly place for individuals<br>to keep track of their medications to eliminate people<br>forgetting when and how much they took of their medicine.</h5>
 			</div>
 		  </li>
 		  <li>
-			<img src="https://i.imgur.com/7YPtglf.jpg"> <!-- random image -->
+			<img src="https://i.imgur.com/7YPtglf.jpg">
 			<div class="caption right-align">
-			  <h3 class="light-blue-text text-darken-4">Left Aligned Caption</h3>
-			  <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+			  <h3 class="grey-text text-darken-3">What is Med Tracker?</h3>
+			  <h5 class="grey-text text-darken-2">Med Tracker is an app that allows logged<br>in users to view, add, edit, and delete their<br>medications.
+				They can log whenand how<br>much of their medication they have taken<br>to not loose track of their intake of medicine.</h5>
 			</div>
 		  </li>
 		  <li>
-			<img src="https://i.imgur.com/ETH7at8.jpg"> <!-- random image -->
+			<img src="https://i.imgur.com/ETH7at8.jpg">
 			<div class="caption left-align">
-			  <h3 class="light-blue-text text-darken-4">Tracking your medication one day at a time</h3>
-			  <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+			  <h3 class="test light-blue-text text-darken-4">"Tracking your medication one day at a time"</h3>
 			</div>
 		  </li>
-		  {% comment %} <li>
-			<img src="https://lorempixel.com/580/250/nature/4"> <!-- random image -->
-			<div class="caption center-align">
-			  <h3>This is our big Tagline!</h3>
-			  <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-			</div>
-		  </li> {% endcomment %}
 		</ul>
 	  </div>
 <script>
@@ -39,21 +32,10 @@
 	M.Slider.init(sliderEl, {
 		indicators: true,
 		height: 400,
-		duration: 500,
-		interval: 1000000
+		duration: 800,
+		interval: 8000
 	});
 	
 </script>
-	{% comment %} document.addEventListener('DOMContentLoaded', function() {
-		var elems = document.querySelectorAll('.slider');
-		var instances = M.Slider.init(elems, options);
-	  }); {% endcomment %}
-    {% comment %} const dateEl = document.getElementById('id_date');
-    M.Datepicker.init(dateEl, {
-      format: 'yyyy-mm-dd',
-      defaultDate: new Date(),
-      setDefaultDate: true,
-      autoClose: true
-    }); {% endcomment %}
 {% endblock content %}
 	
