@@ -1,58 +1,60 @@
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 
 <h1 class="titles">Medication Details</h1>
 
 <div class="row">
-    <div class="col s6">
-        <div class="card">
-            <div class="card-content">
-                <span class="card-title">{{ med.name }}</span>
-                <p>Quantity: {{ med.quantity }}</p>
-                <p>Perscribed: {{ med.perscribed }}</p>
-                <p>Expiration: {{ med.expiration }}</p>
-                <p>Instructions: {{ med.instructions }}</p>
-            </div>
-            <div class="card-action">
-                <a href="{% url 'meds_update' med.id %}">Edit</a>
-                <a href="{% url 'meds_delete' med.id %}">Delete</a>
-            </div>
-        </div>
+  <div class="col s6">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">{{ med.name }}</span>
+        <p>Quantity: {{ med.quantity }}</p>
+        <p>Perscribed: {{ med.perscribed }}</p>
+        <p>Expiration: {{ med.expiration }}</p>
+        <p>Instructions: {{ med.instructions }}</p>
+      </div>
+      <div class="card-action">
+        <a href="{% url 'meds_update' med.id %}">Edit</a>
+        <a href="{% url 'meds_delete' med.id %}">Delete</a>
+      </div>
     </div>
-    <div class="col s6">
-        <form action="{% url 'add_whentaken' med.id %}" method="post">
-            {% csrf_token %}
-            {{ whentaken_form.as_p }}
-            <input type="submit" class="btn" value="When Taken">
-        </form>
-        <table class="striped">
-            <thead>
-                <tr class="dtq"><th>Date</th><th>Time</th><th>Quantity</th></tr>
-            </thead>
-            <tbody>
-                {% for taken in med.whentaken_set.all %}
-                    <tr>
-                        <td>{{taken.date}}</td>
-                        <td>{{taken.time}}</td>
-                        <td>{{taken.quantity}}</td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
+  </div>
+  <div class="col s6">
+    <form action="{% url 'add_whentaken' med.id %}" method="post">
+      {% csrf_token %} {{ whentaken_form.as_p }}
+      <input type="submit" class="btn" value="When Taken" />
+    </form>
+    <table class="striped">
+      <thead>
+        <tr class="dtq">
+          <th>Date</th>
+          <th>Time</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for taken in med.whentaken_set.all %}
+        <tr>
+          <td>{{taken.date}}</td>
+          <td>{{taken.time}}</td>
+          <td>{{taken.quantity}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
 </div>
 <script>
-    const dateEl = document.getElementById('id_date');
-    M.Datepicker.init(dateEl, {
-      format: 'yyyy-mm-dd',
-      defaultDate: new Date(),
-      setDefaultDate: true,
-      autoClose: true
-    });
+  const dateEl = document.getElementById("id_date");
+  M.Datepicker.init(dateEl, {
+    format: "yyyy-mm-dd",
+    defaultDate: new Date(),
+    setDefaultDate: true,
+    autoClose: true,
+  });
 
-    const timeEl = document.getElementById('id_time');
-    M.Timepicker.init(timeEl, {
-      autoClose: true
-    });
+  const timeEl = document.getElementById("id_time");
+  M.Timepicker.init(timeEl, {
+    autoClose: true,
+  });
 </script>
 {% endblock %}
