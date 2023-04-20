@@ -14,14 +14,6 @@
             <p>Instructions: {{ med.instructions }}</p>
             <p>Last Taken: {{ med.whentaken_set.first }}</p>
         </div>
-        {% comment %} <tbody>
-            {% for taken in med.whentaken_set.all.last %}
-                <tr>
-                    <td>{{taken.date}}</td>
-                    <td>{{taken.quantity}}</td>
-                </tr>
-            {% endfor %}
-        </tbody> {% endcomment %}
     </div>
 </a>
 {% endfor %}
