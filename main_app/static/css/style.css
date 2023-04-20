@@ -63,9 +63,9 @@ textarea.materialize-textarea:focus:not([readonly]) {
 #add {
   margin-top: 20px;
 }
-.test:hover {
+.hover:hover {
   background-color: rgb(211, 211, 211, 0.4);
-  transition: transform 125ms;
+  transition: transform 400ms;
   transform: translateY(-15px);
 }
 .card-title,
@@ -118,4 +118,16 @@ textarea.materialize-textarea:focus:not([readonly]) {
 }
 .datepicker-cancel, .datepicker-done{ 
   color: #0277BD
+}
+.caption {
+  color: #0277BD
+}
+.slider .indicators .indicator-item {
+  background-color: #b0bec5;
+}
+.slider .indicators .indicator-item.active {
+  background-color: #0277BD;
+}
+.test {
+  font-style: italic;
 }
